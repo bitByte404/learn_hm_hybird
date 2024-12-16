@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h2>表单标签</h2>
+    <div>
+        <input type="text" name="" id="" placeholder="外部的输入框">
+    </div>
+    <form action="https://www.baidu.com/s">
+        <!-- value 获取到的是数据，label中放置的是给用户看的数据 -->
+        <div><input type="text" placeholder="输入用户名" name="user"></div>
+        <div><input type="password" placeholder="输入密码" name="password"></div>
+        <input id="boy" type="radio" name="male"> <label for="boy">男</label>
+        <input id="girl" type="radio" name="male"> <label for="girl">女</label>
+        <input id="sercert" type="radio" name="male"> <label for="sercert">保密</label>
+        <div>
+            <input type="checkbox" id="basketball" value="1"> <label for="basketball">篮球</label>
+            <input type="checkbox" id="jump" value="2"> <label for="basketball">跳</label>
+            <input type="checkbox" id="rap" value="3"> <label for="basketball">rap</label>
+            <input type="checkbox" id="sing" value="4"> <label for="sing">唱</label>
+        </div>
+        <div>
+            <!-- 文本框 -->
+            <textarea name="" id="" placeholder="个性签名"></textarea>
+        </div>
+        <div>
+            <!-- type 设置按钮的类型
+            button 默认
+            submit 提交，可以结合 form表单 提交数据到指定的url地址
+            reset 重置
+            -->
+            <button type="submit">提交</button>
+            <button type="reset">重置</button>
+        </div>
+    </form>
+    <div>
+        <h2>度百搜索引擎</h2>
+        <form action="https://www.baidu.com/s">
+            <input type="text" placeholder="请输入查询内容" name="wd">
+            <button type="submit">去搜索</button>
+        </form>
+    </div>
+</body>
+</html>
