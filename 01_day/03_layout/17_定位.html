@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+</head>
+<style>
+    .father {
+        width: 80vw;
+        height: 50vw;
+        border: 1px solid black;
+        /* 添加了 relative后 子元素就以他作为参考 */
+        position: relative;
+    }
+
+    .one {
+        width: 20vw;
+        height: 10vw;
+        background-color: orange;
+        /* 开启定位之后，元素不占位，后面的内容上去了 */
+        /* position: absolute; 开启之后，默认会以页面作为参考的标准 */
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .two {
+        width: 20vw;
+        height: 10vw;
+        background-color: green;
+        position: absolute;
+        right: 100px;
+        z-index: 999;
+    }
+</style>
+<body>
+    <div class="father">
+        <div class="one">one</div>
+        <div class="two">two</div>
+    </div>
+</body>
+</html>
