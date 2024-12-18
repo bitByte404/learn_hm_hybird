@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    function sayHi() {
+        console.log('hi')
+    }    
+
+    // 匿名函数 鸿蒙中不允许这样写
+    // 这种写法不能绑定this
+    const func = function () {
+        console.log('func')
+    }
+
+    // 箭头函数
+    const func2 = () => {
+        console.log('func2')
+    }
+
+    function printInfo(name, gender='man', ...args) {
+        console.log(name)
+        console.log(gender)
+        console.log(args)
+    }
+</script>
+</html>

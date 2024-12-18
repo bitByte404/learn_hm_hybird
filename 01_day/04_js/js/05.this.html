@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // this 谁调用就是谁
+    // 看不出来谁调用，一般是window
+    // 全局的变量都相当于添加给window对象
+    // 鸿蒙中是没有window对象的
+    function sayHi() {
+        console.log('sayHi', this)
+    }
+
+    sayHi()
+
+    // 能看出谁调用
+    const person = {
+        name: 'cw',
+        film: ['jump together'],
+        skill: '不抗冻，不要跳冰水',
+
+        sayHi() {
+            console.log(this)
+        },
+
+        // 箭头函数 创建时会绑定当前作用域的this
+        // 当前作用域没有this 向上一级找，直至找到全局，还找不到 window
+        sayHello: () => {
+            console.log(this)
+        },
+
+        sayHiPlus() {
+            console.log('sayhi', this) 
+            setTimeout(function () {
+                // 没有通过任何方式指定 this
+                console.log('sayHiPlus', this)
+            }, 1000)
+        }
+    }
+
+    person.sayHi()
+    person.sayHello()
+    person.sayHiPlus()
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>盒子1</div>
+    <div>盒子2</div>
+    <div>盒子3</div>
+</body>
+<script>
+    // 1. 查找元素1个
+    const divDom = document.querySelector('div')
+    console.log(divDom)
+    // 打印dom对象，建议使用console.dir
+    console.dir(divDom)
+    setTimeout(() => {
+        // 2. 修改元素
+        divDom.innerHTML = '我喜欢打篮球'
+    }, 1000)
+
+
+    // 2. 查找多个元素
+    // divArr 有length属性，有forEach
+    // 但是没有push filter 等其他数组方法
+    // 所以叫伪数组，有length属性，通过下标取值
+    const divArr = document.querySelectorAll('div')
+    console.log(divArr)
+    setTimeout(() => {
+        // divArr[2].innerHTML = 'Rap'
+        divArr.forEach(element => {
+            element.innerHTML = '喵喵喵'
+        });
+    }, 1000)
+
+</script>
+</html>

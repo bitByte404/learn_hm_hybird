@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>节点操作</title>
+  </head>
+  <body>
+    <div>
+      <span>span</span>
+      <span>span</span>
+      <span>span</span>
+    </div>
+    <div>
+      <button class="add">添加节点</button>
+      <button class="del">删除节点</button>
+    </div>
+  </body>
+  <script>
+    // 创建节点
+    document.querySelector(".add").axddEventListener("click", function () {
+      const a = document.createElement("a");
+      a.innerHTML='西南桦'
+      a.href='https://www.baidu.com'
+      const body = document.querySelector("body");
+      // 指定元素末尾添加
+    //   body.append(a);
+    body.prepend(a) // 前面添加
+    });
+
+    document.querySelector('.del').addEventListener('click', function () {
+        // document.querySelector('body').remove()
+        document.querySelectorAll('span').forEach((item, index) => {
+            setTimeout(() => {
+                item.remove()
+            }, 1000 * index)
+        })
+        
+    })
+  </script>
+</html>

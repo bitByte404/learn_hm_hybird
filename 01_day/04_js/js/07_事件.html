@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        border: 1px red solid;
+    }
+
+    input {
+        border: 5px yellowgreen solid;
+    }
+</style>
+<body>
+    <div>盒子</div>
+    <input type="text">
+</body>
+<script>
+    const div = document.querySelector('div')
+    div.addEventListener('click', function () {
+        console.log(this)
+        // css 中的-js 改成驼峰命名
+        this.style.backgroundColor = 'red'
+        this.innerHTML = '还哈哈哈'
+    })
+
+    div.addEventListener('mouseenter', function () {
+        this.style.backgroundColor = 'green'
+    })
+
+    div.addEventListener('mouseleave', function () {
+        this.style.backgroundColor = 'white'
+    })
+
+    const ipt = document.querySelector('input')
+    ipt.addEventListener('focus', function() {
+        console.log('focus-获得焦点')
+    })
+
+    ipt.addEventListener('blur', function () {
+        console.log('blur-失去焦点')
+        // 需求：失去焦点之后，如果输入框没有内容，加上红色边框
+        if (this.value === '') {
+            this.style.border = '10px red solid'
+        }
+    })
+
+    ipt.addEventListener('keydown', function () {
+        console.log('keydown-按下')
+    
+    })
+
+    // 有事件参数，要用可以获取
+    ipt.addEventListener('keyup', function (e) {
+        console.log(e.keyCode)
+        if (e.keyCode === 13) {
+            alert(this.value)
+        }
+    })
+
+    ipt.addEventListener('input', function () {
+        console.log('input-输入')
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (emailRegex.test(this.value)) {
+            // 校验通过
+            this.style.backgroundColor = 'green'
+        } else {
+            this.style.backgroundColor = 'red'
+        }
+    })
+</script>
+</html>

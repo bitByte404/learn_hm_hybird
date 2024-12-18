@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <a href="https://www.baidu.com">跳转到百度</a>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div> -->
+
+    <div>标签</div>
+    <input type="text" placeholder="请输入查询内容">
+</body>
+<script>
+    // const link = document.querySelector('a')
+    // console.log(link)
+
+    // // 查找多个元素
+    // const divs = document.querySelector('div')
+    // console.log(divs)
+    // console.log(divs[0])
+
+    const div = document.querySelector('div')
+
+    // div.addEventListener('click', function () {
+    //     console.log('点击事件触发了')
+    //     this.style.backgroundColor = 'green'
+    // })
+
+    div.addEventListener('mouseenter', function () {
+        this.style.backgroundColor = 'pink'
+    })
+
+    div.addEventListener('mouseleave', function () {
+        this.style.backgroundColor = 'green'
+    })
+</script>
+</html>
