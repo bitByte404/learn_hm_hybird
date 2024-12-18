@@ -5,25 +5,36 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-// 1. 定义基本类型
-const num = ref(10)
-const foods = ref(['鸡蛋', '番茄'])
-// 代码中如果需要修改数据，需要通过.value
-const changeNum = () => {
-  num.value++
-}
-
-const changeFoods = () => {
-  foods.value.push('香肠')
-}
+const age = ref(4)
+const isShow = ref(false)
 </script>
 
 <!-- 结构 -->
 <template>
-  <h1 @click="changeNum">num: {{ num }}</h1>
-  <h1 @click="changeFoods">food: {{ foods }}</h1>
-  <!-- ref 定义的数据在UI界面中使用或者修改不需要写.value -->
-  <button @click="foods.unshift('花菜')">修改数据</button>
+  <div>
+    <button @click="isShow = !isShow">切换图片显示</button>
+  </div>
+  <img
+    v-show="isShow"
+    src="https://picx.zhimg.com/70/v2-dc3f3340884aed8c6e2470d55319064c_1440w.avis?source=172ae18b&biz_tag=Post"
+    alt=""
+  />
+  <!-- v-if 本质从页面中移除或添加元素，比较消耗性能 -->
+  <h2>v-if</h2>
+  <img
+    v-if="isShow"
+    src="https://picx.zhimg.com/70/v2-dc3f3340884aed8c6e2470d55319064c_1440w.avis?source=172ae18b&biz_tag=Post"
+    alt=""
+  />
+  <h3 v-if="age < 5">玩泥巴</h3>
+  <h3 v-if="age > 5">去酒吧</h3>
+  <h3 v-if="age > 18">光明正大去网吧</h3>
+  <button @click="age++">长大</button>
 </template>
 
-<style scoped></style>
+<style scoped>
+img {
+  width: 200px;
+  height: 200px;
+}
+</style>
